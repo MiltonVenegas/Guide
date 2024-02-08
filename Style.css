@@ -1,9 +1,36 @@
-.row{
-    display: flex;
-    justify-content: end;
-    font-size: 24px;
-    width: 100%;
+#playable{
+    margin-left: 100px;
+    font-size: 32px;
 }
+.titulos{
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+}
+#pro{
+    margin-left: 900px;
+    font-size: 32px;
+}
+
+.fixed-container {
+    position: fixed;
+    top: 20px; 
+    left: 20px; 
+    display: flex;
+    align-items: center;
+  }
+
+  .fixed-container input[type="text"] {
+    width: 200px; 
+    height: 40px; 
+    font-size: 16px; 
+    margin-right: 10px; 
+  }
+
+  .fixed-container button {
+    height: 40px; 
+    font-size: 16px;
+  }
 p{
     font-size: 32px;
     margin-left: 100px;

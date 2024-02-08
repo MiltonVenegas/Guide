@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
+    var lastMatchIndex = -1;
+
     document.getElementById('searchButton').addEventListener('click', function() {
         var searchQuery = document.getElementById('searchInput').value;
         search(searchQuery);
@@ -9,9 +11,10 @@ document.addEventListener("DOMContentLoaded", function() {
         var paragraphs = content.getElementsByTagName('p');
         var found = false;
 
-        for (var i = 0; i < paragraphs.length; i++) {
+        var regex = new RegExp(keyword, 'gi');
+
+        for (var i = lastMatchIndex + 1; i < paragraphs.length; i++) {
             var paragraphContent = paragraphs[i].textContent;
-            var regex = new RegExp(keyword, 'gi');
             var matches = paragraphContent.match(regex);
 
             if (matches) {
@@ -27,11 +30,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 for (var j = 0; j < matchesInParagraph.length; j++) {
                     matchesInParagraph[j].scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
+
+                lastMatchIndex = i; 
+                break; 
             }
         }
 
         if (!found) {
-            alert('No matches found');
+            alert('No more matches found');
+            lastMatchIndex = -1; 
         }
     }
 });
