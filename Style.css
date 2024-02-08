@@ -1,12 +1,19 @@
 .row{
     display: flex;
     justify-content: end;
+    font-size: 24px;
+    width: 100%;
 }
 p{
     font-size: 32px;
     margin-left: 100px;
     margin-right: 100px;
     color: seashell;
+}
+.Pasiva{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(9, 150, 243);
 }
 .Severum{
     display: flex;
